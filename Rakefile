@@ -1,5 +1,5 @@
-desc "Start mdpress, which will watch `deck.md` and build your presentation automatically."
-task :build do
+desc "Start watching `deck.md` and update your presentation as you edit."
+task :watch do
   puts <<-'TEXT'
   ****************
 
@@ -14,12 +14,14 @@ task :build do
   ****************
   TEXT
 
-  trap('INT') do
-    puts "Exiting mdpress..."
-    exit 0
-  end
+  puts "Watching your presentation, updating deck/index.html"
+  exec "mdpress --automatic deck.md --stylesheet pivotal"
+end
 
-  sh "mdpress --automatic deck.md --stylesheet pivotal &"
+desc "Build your presentation from `deck.md` with mdpress."
+task :build do
+  puts "Building your presentation at deck/index.html"
+  `mdpress deck.md --stylesheet pivotal`
 end
 
 desc "Open up your presentation."
