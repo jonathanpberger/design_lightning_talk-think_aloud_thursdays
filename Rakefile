@@ -1,5 +1,5 @@
 desc "Start watching `deck.md` and update your presentation as you edit."
-task :watch do
+task :watch => :open do
   puts <<-'TEXT'
   ****************
 
@@ -29,4 +29,4 @@ task :open => :build do
   sh "launchy deck/index.html"
 end
 
-task :default => [:open]
+task :default => [:watch]
