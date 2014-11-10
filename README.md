@@ -26,4 +26,9 @@ The goal is to make it easy for Pivots to create on-brand presentations using mo
 - run `rake` to rapidly turn it into a presentation
 - iterate on timing, rhythm, etc. by adding, rm'ing, splitting slides. Etc.
 
+## On Styling
 
+`H1` and `strong` render the same.
+`H2` and `em` render the same.
+
+This is so you can control the look of the presentation, but still maintain a semantic outline.
