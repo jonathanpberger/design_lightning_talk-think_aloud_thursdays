@@ -67,7 +67,12 @@ With thanks to <http://norvig.com/Gettysburg/sld001.htm>
 
 ---
 <script src="js/impressConsole.js"></script>
+<script src="js/jquery.js"></script>
+
 <script>
-    impressConsole().init();
-    // impressConsole().open(); // for console to open automatically
+    $(document).ready(function(){
+       // $("ul").wrap("<div class='notes'></div>");  // to make all <ul>'s hidden notes.
+      impressConsole().init();
+      // impressConsole().open(); // for console to open automatically
+    });
 </script>
